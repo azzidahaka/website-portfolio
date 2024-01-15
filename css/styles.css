@@ -6,7 +6,7 @@ Primary Color : #357b70;
 Secondary Color : #e0b354;
  */
 
- :root {
+:root {
     --primary-color: #357b70;
     --secondary-color: #e0b354;
     --dark-grey: #2b2b2b;
@@ -15,8 +15,8 @@ Secondary Color : #e0b354;
     --light-grey:lightgray;
     --visited-link:#9c1acf;
     --selected-link:#489c79;
-    --h1-font-weight:700;
-  }
+    --h-font-weight:700;
+}
 
 body {
     font-family: 'Lato', sans-serif;
@@ -52,7 +52,7 @@ section {
 }
 
 .page-header__item {
-    flex: 0 1 200px;
+    flex: 0 1 100px;
 }
 
 .page-header__item:last-child {
@@ -112,9 +112,11 @@ section {
     }
 
     .profile__portrait {
-        width: 300px;
+        width: 100%;
+        max-width: 300px;
         border-radius: 50%;
     }
+
 
 }
 
@@ -244,6 +246,10 @@ button:focus,
 
 /* view for all 0 - 750px */
 @media all and (max-width: 750px) {
+    .profile__intro {
+        margin-top: 0px;
+
+    }
 
 
     .grid {
