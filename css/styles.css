@@ -6,7 +6,7 @@ Primary Color : #357b70;
 Secondary Color : #e0b354;
  */
 
-:root {
+ :root {
     --primary-color: #357b70;
     --secondary-color: #e0b354;
     --dark-grey: #2b2b2b;
@@ -16,7 +16,7 @@ Secondary Color : #e0b354;
     --visited-link:#9c1acf;
     --selected-link:#489c79;
     --h-font-weight:700;
-}
+  }
 
 body {
     font-family: 'Lato', sans-serif;
@@ -41,6 +41,9 @@ button {
 
 section {
     padding: 20px;
+    display: grid;
+    justify-items: center;
+
 }
 
 /* style for header */
@@ -52,8 +55,11 @@ section {
 }
 
 .page-header__item {
-    flex: 0 1 100px;
+    flex: 0 1 ;
+    height: 40px;
+    width: 100px;
 }
+
 
 .page-header__item:last-child {
     flex: 1 1;
@@ -63,6 +69,7 @@ section {
 
 .navigation-list {
     list-style-type: none;
+    margin: auto;
 }
 
 .navigation-list li {
@@ -115,8 +122,9 @@ section {
         width: 100%;
         max-width: 300px;
         border-radius: 50%;
-    }
 
+
+    }
 
 }
 
@@ -198,8 +206,13 @@ a:active {
     /* selected link */
     color: var(--selected-link);
 }
-
-
+/* .section{
+    display: grid;
+    justify-items: center;
+} */
+.table-of-skills{
+    text-align: center;
+}
 /* Style for Buttons */
 .button,
 button {
@@ -213,6 +226,7 @@ button {
     color: var(--white);
     text-decoration: none;
     padding: 10px;
+    margin: 10px;
     border-radius: 3px;
     /* width of the border, type, color */
     border-bottom: 2px solid var(--black);
@@ -235,21 +249,30 @@ button:focus,
     .grid {
         grid-template-columns: 1fr;
     }
+
+    .profile__intro {
+        margin-top: 0px;
+
+    }
 }
 
 /* view for (min-width: 500px) and (max-width: 750px) */
 @media all and (min-width: 500px) and (max-width: 750px) {
+
+    .profile__intro {
+        position: relative;
+        margin-top: 100px;
+
+    }
     .grid {
+
         grid-template-columns: 1fr 1fr;
     }
 }
 
 /* view for all 0 - 750px */
 @media all and (max-width: 750px) {
-    .profile__intro {
-        margin-top: 0px;
 
-    }
 
 
     .grid {
