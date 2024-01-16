@@ -2,7 +2,7 @@
 * Prefixed by https://autoprefixer.github.io
 * PostCSS: v8.4.14,
 * Autoprefixer: v10.4.7
-* Browsers: last 9 version
+* Browsers: last 4 version
 */
 
 /*
@@ -37,6 +37,10 @@ button {
 
 section {
     padding: 20px;
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+
 }
 
 /* style for header */
@@ -51,9 +55,12 @@ section {
 
 .page-header__item {
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 100px;
-            flex: 0 1 100px;
+        -ms-flex: 0 1 ;
+            flex: 0 1 ;
+    height: 40px;
+    width: 100px;
 }
+
 
 .page-header__item:last-child {
     -webkit-box-flex: 1;
@@ -65,6 +72,7 @@ section {
 
 .navigation-list {
     list-style-type: none;
+    margin: auto;
 }
 
 .navigation-list li {
@@ -119,6 +127,8 @@ section {
         width: 100%;
         max-width: 300px;
         border-radius: 50%;
+
+
     }
 
 }
@@ -209,8 +219,13 @@ a:active {
     /* selected link */
     color: #489c79;
 }
-
-
+/* .section{
+    display: grid;
+    justify-items: center;
+} */
+.table-of-skills{
+    text-align: center;
+}
 /* Style for Buttons */
 .button {
     /* overwrites browser defaults and resets the border */
@@ -223,6 +238,7 @@ a:active {
     color: white;
     text-decoration: none;
     padding: 10px;
+    margin: 10px;
     border-radius: 3px;
     /* width of the border, type, color */
     border-bottom: 2px solid black;
@@ -241,6 +257,7 @@ button {
     color: white;
     text-decoration: none;
     padding: 10px;
+    margin: 10px;
     border-radius: 3px;
     /* width of the border, type, color */
     border-bottom: 2px solid black;
@@ -266,12 +283,25 @@ button:focus,
         -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     }
+
+    .profile__intro {
+        margin-top: 0px;
+
+    }
 }
 
 /* view for (min-width: 500px) and (max-width: 750px) */
 @media all and (min-width: 500px) and (max-width: 750px) {
+
+    .profile__intro {
+        position: relative;
+        margin-top: 100px;
+
+    }
     .grid {
+
         -ms-grid-columns: 1fr 20px 1fr;
+
         grid-template-columns: 1fr 1fr;
     }
 }
@@ -279,10 +309,8 @@ button:focus,
 /* view for all 0 - 750px */
 @media all and (max-width: 750px) {
 
-    .profile__intro {
-        margin-top: 0px;
 
-    }
+
     .grid {
         grid-gap: 10px;
     }
