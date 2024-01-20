@@ -6,23 +6,31 @@ Primary Color : #357b70;
 Secondary Color : #e0b354;
  */
 
- :root {
+:root {
     --primary-color: #357b70;
     --secondary-color: #e0b354;
     --dark-grey: #2b2b2b;
     --black: black;
+    --background-section: #f4f1de;
+    --background-header: #f2cc8f;
     --white: white;
-    --light-grey:lightgray;
-    --visited-link:#9c1acf;
-    --selected-link:#489c79;
-    --h-font-weight:700;
-  }
+    --light-grey: lightgray;
+    --visited-link: #9c1acf;
+    --selected-link: #489c79;
+    --h-font-weight: 700;
+}
+
 
 body {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.6;
+    background-color: var(--background-section);
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
 
 }
 
@@ -43,47 +51,47 @@ section {
     padding: 20px;
     display: grid;
     justify-items: center;
+    align-items: center;
 
 }
 
 /* style for header */
 .page-header {
     display: flex;
-    width: 100%;
-    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-header);
+
+
 
 }
 
-.page-header__item {
-    flex: 0 1 ;
-    height: 40px;
+.page-header img{
+    flex: 0 1;
+    height: 50px;
     width: 100px;
+    align-self: flex-start;
+    margin: 10px;
 }
 
 
-.page-header__item:last-child {
-    flex: 1 1;
-    text-align: right;
-
-}
 
 .navigation-list {
-    list-style-type: none;
-    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    padding: 0;
+    list-style: none;
 }
 
-.navigation-list li {
-    display: inline-block;
-    margin-left: 15px;
 
-}
-
- .navigation-list__item{
+.navigation-list__item {
     padding: 10px;
     text-decoration: none;
     color: var(--black);
     position: relative;
-  }
+    white-space: nowrap;
+}
 
 
 
@@ -144,12 +152,18 @@ section {
     }
 
     .grid__item {
-        background-color: var(--light-grey);
+        background-color: var(--background-header);
         width: auto;
         min-height: auto;
         margin: 0;
-    }
+        padding: 10px;
+        text-align: center;
+        border-radius: 5%;
 
+    }
+    .grid__item a{
+        margin-top: 50px;
+    }
 }
 
 
@@ -161,6 +175,7 @@ section {
     display: flex;
     flex-direction: column;
     text-align: center;
+
 }
 
 @supports (display: grid) {
@@ -180,7 +195,8 @@ h1 {
 
 h2 {
     font-size: 24px;
-    font-weight: var(--h1-font-weight);;
+    font-weight: var(--h1-font-weight);
+    ;
 }
 
 h3 {
@@ -190,7 +206,8 @@ h3 {
 
 a {
     color: var(--primary-color);
-  }
+}
+
 a:visited {
 
     color: var(--visited-link);
@@ -206,13 +223,24 @@ a:active {
     /* selected link */
     color: var(--selected-link);
 }
-/* .section{
-    display: grid;
-    justify-items: center;
-} */
-.table-of-skills{
+
+
+.table-of-skills {
     text-align: center;
 }
+
+#contact-form{
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-gap: 5px;
+
+}
+
+
+
+
+
+
 /* Style for Buttons */
 .button,
 button {
@@ -243,7 +271,20 @@ button:focus,
     opacity: 0.8;
 }
 
+#about-picture{
+    width: 80%;
 
+}
+
+
+
+
+@media all and (max-width: 400px) {
+   .navigation-list{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+   }
+}
 /* view for maxwidth of 500px */
 @media all and (max-width: 500px) {
     .grid {
@@ -264,6 +305,7 @@ button:focus,
         margin-top: 100px;
 
     }
+
     .grid {
 
         grid-template-columns: 1fr 1fr;
@@ -328,21 +370,22 @@ button:focus,
 /* animation to move further cloud */
 @keyframes cloud-move-reverse {
     from {
-      transform: translate(446px, 48px);
+        transform: translate(446px, 48px);
     }
+
     to {
-      transform: translate(100px, 48px);
+        transform: translate(100px, 48px);
     }
-  }
+}
 
 /* animate cloud further away */
 .cloud-back {
     animation: 34s cloud-move-reverse infinite alternate linear;
-  }
+}
 
 /* Transformation to make the .navigation-list__item borders move outwards when hovered */
-.navigation-list__item::before, .navigation-list__item::after
-{
+.navigation-list__item::before,
+.navigation-list__item::after {
     position: absolute;
     left: 0px;
     width: 100%;
@@ -353,20 +396,18 @@ button:focus,
     transition: all 0.3s;
 }
 
-.navigation-list__item::before
-{
+.navigation-list__item::before {
     top: 0px;
     transform: translateY(10px);
 }
 
-.navigation-list__item::after
-{
+.navigation-list__item::after {
     bottom: 0px;
     transform: translateY(-10px);
 }
 
-.navigation-list__item:hover::before, .navigation-list__item:hover::after
-{
+.navigation-list__item:hover::before,
+.navigation-list__item:hover::after {
     opacity: 1;
     transform: translateY(0px);
 }
