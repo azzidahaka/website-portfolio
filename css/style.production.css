@@ -328,6 +328,8 @@ button:focus,
 
 #about-picture{
     width: 700px;
+    min-width:45%;
+    max-width: 100%;
 
 }
 
@@ -447,12 +449,6 @@ button:focus,
         -webkit-transform: translate(200px, 50px);
                 transform: translate(200px, 50px);
     }
-}
-
-/* animate the cloud */
-.cloud-front {
-    -webkit-animation: 30s cloud-move infinite alternate linear;
-            animation: 30s cloud-move infinite alternate linear;
 }
 
 /* animation to move further cloud */
