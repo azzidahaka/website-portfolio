@@ -126,12 +126,11 @@ section {
   display: inline-block;
   width: 33%;
 }
-.grid__item p {
-  font-size: 12px; /* Change this value to the size you want */
-}
+
 .project-img {
-  width: 100%;
-  height: 144px;
+  width: 60%;
+  height: 200px;
+  justify-self: center;
 }
 @supports (display: grid) {
   .grid {
