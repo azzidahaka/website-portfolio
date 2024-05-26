@@ -15,7 +15,8 @@
       let error = document.createElement('div');
       error.classList.add('error-message');
       error.innerText = message;
-      formContainer.appendChild(error);
+      // input.insertAdjacentElement('afterend', error);
+      input.parentNode.insertBefore(error, input.nextSibling);
     }
   }
 
@@ -24,16 +25,16 @@
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!value) {
-      showErrorMessage(emailInput, 'Email is a required field.');
+      showError(emailInput, 'Email is a required field.');
       return false;
     }
 
-    if (!emailRegex.test(emailInput)) {
-      showErrorMessage(emailInput, 'You must enter a valid email address.');
+    if (emailRegex.test(emailInput) === false) {
+      showError(emailInput, 'You must enter a valid email address.');
       return false;
     }
 
-    showErrorMessage(emailInput, null);
+    showError(emailInput, null);
     return true;
   }
 
@@ -41,17 +42,17 @@
     const phoneRegex = /^\d{10}$/;
     let value = telInput.value;
     if (!value) {
-      showErrorMessage(telInput, 'Password is a required field.');
+      showError(telInput, 'Password is a required field.');
       return false;
     }
 
     if (!phoneRegex.test(telInput)) {
-      showErrorMessage(telInput, 'Valid number please');
+      showError(telInput, 'Valid number please');
 
       return false;
     }
 
-    showErrorMessage(telInput, null);
+    showError(telInput, null);
     return true;
   }
 
