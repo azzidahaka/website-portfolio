@@ -7,406 +7,389 @@ Secondary Color : #e0b354;
  */
 
 :root {
-    --primary-color: #357b70;
-    --secondary-color: #e0b354;
-    --dark-grey: #2b2b2b;
-    --black: black;
-    --background-section: #f4f1de;
-    --background-header: #f2cc8f;
-    --white: white;
-    --light-grey: lightgray;
-    --visited-link: #9c1acf;
-    --selected-link: #489c79;
-    --h-font-weight: 700;
+  --primary-color: #357b70;
+  --secondary-color: #e0b354;
+  --dark-grey: #2b2b2b;
+  --black: black;
+  --background-section: #f4f1de;
+  --background-header: #f2cc8f;
+  --white: white;
+  --light-grey: lightgray;
+  --visited-link: #9c1acf;
+  --selected-link: #489c79;
+  --h-font-weight: 700;
 }
 
-
 body {
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.6;
-    background-color: var(--background-section);
-    display: flex;
-    height: 100vh;
-    flex-direction: column;
-    justify-content: space-between;
-
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: var(--background-section);
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* forces width of all element to include padding and border */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 
 input,
 texture,
 select,
 button {
-    font-family: system-ui;
+  font-family: system-ui;
 }
 
 section {
-    padding: 20px;
-    display: grid;
-    justify-items: center;
-    align-items: center;
-
+  padding: 20px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
 }
 
 /* style for header */
 .page-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--background-header);
-
-
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-header);
 }
 
-.page-header img{
-    flex: 0 1;
-    height: 50px;
-    width: 100px;
-    align-self: flex-start;
-    margin: 10px;
+.page-header img {
+  flex: 0 1;
+  height: 50px;
+  width: 100px;
+  align-self: flex-start;
+  margin: 10px;
 }
-
-
 
 .navigation-list {
-    display: flex;
-    flex-wrap: wrap;
-    width: auto;
-    padding: 0;
-    list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  padding: 0;
+  list-style: none;
 }
-
 
 .navigation-list__item {
-    padding: 10px;
-    text-decoration: none;
-    color: var(--black);
-    position: relative;
-    white-space: nowrap;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--black);
+  position: relative;
+  white-space: nowrap;
 }
-
-
 
 /* style for div(profile) in main */
 /* portrait fall back */
 
 .profile {
-    max-width: 600px;
-    margin: 0 auto;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .profile__portrait {
-    float: left;
-    width: 300px;
-    margin-right: 40px;
-    border-radius: 50%;
+  float: left;
+  width: 300px;
+  margin-right: 40px;
+  border-radius: 50%;
 }
 
 @supports (display: grid) {
-    .profile {
-        display: grid;
-        max-width: 600px;
-        margin: 0 auto;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 10px;
-        justify-items: center;
-    }
+  .profile {
+    display: grid;
+    max-width: 600px;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    justify-items: center;
+  }
 
-    .profile__intro {
-        position: relative;
-        margin-top: 100px;
+  .profile__intro {
+    position: relative;
+    margin-top: 100px;
+  }
 
-    }
-
-    .profile__portrait {
-        width: 100%;
-        max-width:300px;
-        border-radius: 50%;
-
-
-    }
-
+  .profile__portrait {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 50%;
+  }
 }
 
 /* style for grid */
 /* grid fallback */
 .grid__item {
-    display: inline-block;
-    width: 33%;
+  display: inline-block;
+  width: 33%;
 }
 
+.project-img {
+  width: 60%;
+  height: 200px;
+  justify-self: center;
+}
 @supports (display: grid) {
-    .grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-gap: 20px;
-        margin: 0;
-    }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+    margin: 0;
+  }
 
-    .grid__item {
-        display: grid;
-        background-color: var(--background-header);
-        width: auto;
-        min-height: auto;
-        margin: 0;
-        padding: 10px;
-        text-align: center;
-        border-radius: 5%;
-        align-items: space-between;
-
-    }
-    .grid__item a{
-        align-self: self-end;
-    }
+  .grid__item {
+    display: grid;
+    background-color: var(--background-header);
+    width: auto;
+    min-height: auto;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5%;
+    align-items: space-between;
+  }
+  .grid__item a {
+    align-self: self-end;
+  }
 }
-
-
 
 /* style for footer */
 /* footer fallback */
 .page-footer {
-    clear: both;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 @supports (display: grid) {
-    .page-footer {
-        display: grid;
-        text-align: center;
-    }
+  .page-footer {
+    display: grid;
+    text-align: center;
+  }
 }
 
 /*
 Styles for h1-h6
 */
 h1 {
-    font-size: 30px;
-    font-weight: var(--h1-font-weight);
+  font-size: 30px;
+  font-weight: var(--h1-font-weight);
 }
 
 h2 {
-    font-size: 24px;
-    font-weight: var(--h1-font-weight);
-    ;
+  font-size: 24px;
+  font-weight: var(--h1-font-weight);
 }
 
 h3 {
-    font-size: 18px;
-    font-weight: var(--h1-font-weight);
+  font-size: 18px;
+  font-weight: var(--h1-font-weight);
 }
 
 a {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 a:visited {
-
-    color: var(--visited-link);
+  color: var(--visited-link);
 }
 
 a:hover,
 a:focus {
-    /* No underlining when hovering over a link */
-    text-decoration: none;
+  /* No underlining when hovering over a link */
+  text-decoration: none;
 }
 
 a:active {
-    /* selected link */
-    color: var(--selected-link);
+  /* selected link */
+  color: var(--selected-link);
 }
-
 
 .table-of-skills {
-    text-align: center;
+  text-align: center;
 }
 
-#contact-form{
-    display: grid;
-    grid-template-columns: 1fr ;
-    grid-gap: 5px;
-
+#contact-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 5px;
 }
 
-
-
-
-
+label {
+  display: inline-block;
+  min-width: 75px;
+}
 
 /* Style for Buttons */
 .button,
 button {
-    /* overwrites browser defaults and resets the border */
-    border: none;
-    display: inline-block;
-    /* takes the font from the outer container */
-    font-family: inherit;
-    /* styles the button */
-    background-color: var(--primary-color);
-    color: var(--white);
-    text-decoration: none;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 3px;
-    /* width of the border, type, color */
-    border-bottom: 2px solid var(--black);
-    transition: opacity 0.2s;
+  /* overwrites browser defaults and resets the border */
+  border: none;
+  display: inline-block;
+  /* takes the font from the outer container */
+  font-family: inherit;
+  /* styles the button */
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-decoration: none;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 3px;
+  /* width of the border, type, color */
+  border-bottom: 2px solid var(--black);
+  transition: opacity 0.2s;
 }
 
 button:hover,
 button:focus,
 .button:hover,
 .button:focus {
-    /* lets the mouse appear as a hand when hovering over the button */
-    cursor: pointer;
-    /* reduces the opacity of the button to 80% */
-    opacity: 0.8;
+  /* lets the mouse appear as a hand when hovering over the button */
+  cursor: pointer;
+  /* reduces the opacity of the button to 80% */
+  opacity: 0.8;
 }
 
-#about-picture{
-    width: 700px;
-    min-width:45%;
-    max-width: 100%;
-
+#about-picture {
+  width: 700px;
+  min-width: 45%;
+  max-width: 100%;
 }
 
-
-
+.error-message {
+  color: red;
+  font-size: 0.8em;
+}
 
 @media all and (max-width: 400px) {
-   .navigation-list{
-    display:grid;
+  .navigation-list {
+    display: grid;
     grid-template-columns: 1fr 1fr;
-   }
+  }
 }
 /* view for maxwidth of 500px */
 @media all and (max-width: 500px) {
-    .grid {
-        grid-template-columns: 1fr;
-    }
+  .grid {
+    grid-template-columns: 1fr;
+  }
 
-    .profile__intro {
-        margin-top: 0px;
-
-    }
+  .profile__intro {
+    margin-top: 0px;
+  }
 }
 
 /* view for (min-width: 500px) and (max-width: 750px) */
 @media all and (min-width: 500px) and (max-width: 750px) {
+  .profile__intro {
+    position: relative;
+    margin-top: 100px;
+  }
 
-    .profile__intro {
-        position: relative;
-        margin-top: 100px;
-
-    }
-
-    .grid {
-
-        grid-template-columns: 1fr 1fr;
-    }
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /* view for all 0 - 750px */
 @media all and (max-width: 750px) {
+  .grid {
+    grid-gap: 10px;
+  }
 
+  .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
 
-
-    .grid {
-        grid-gap: 10px;
-    }
-
-    .grid__item:last-child {
-        grid-column: auto / auto;
-        grid-row: auto / auto;
-    }
-
-    h1 {
-        font-size: 22px;
-    }
+  h1 {
+    font-size: 22px;
+  }
 }
 
 /* animation to change colour */
 @keyframes color-change {
-    0% {
-        fill: #edc655;
-    }
+  0% {
+    fill: #edc655;
+  }
 
-    50% {
-        fill: #fcffad;
-    }
+  50% {
+    fill: #fcffad;
+  }
 
-    100% {
-        fill: #f76414;
-    }
+  100% {
+    fill: #f76414;
+  }
 }
 
 /* animate the sun */
 .sun {
-    animation: 4s color-change infinite alternate linear;
+  animation: 4s color-change infinite alternate linear;
 }
 
 /* animation for moving closer cloud */
 @keyframes cloud-move {
-    from {
-        transform: translate(0, 50px);
-    }
+  from {
+    transform: translate(0, 50px);
+  }
 
-    to {
-        transform: translate(200px, 50px);
-    }
+  to {
+    transform: translate(200px, 50px);
+  }
 }
 
 /* animation to move further cloud */
 @keyframes cloud-move-reverse {
-    from {
-        transform: translate(446px, 48px);
-    }
+  from {
+    transform: translate(446px, 48px);
+  }
 
-    to {
-        transform: translate(100px, 48px);
-    }
+  to {
+    transform: translate(100px, 48px);
+  }
 }
 
 /* animate cloud further away */
 .cloud-back {
-    animation: 34s cloud-move-reverse infinite alternate linear;
+  animation: 34s cloud-move-reverse infinite alternate linear;
 }
 
 /* Transformation to make the .navigation-list__item borders move outwards when hovered */
 .navigation-list__item::before,
 .navigation-list__item::after {
-    position: absolute;
-    left: 0px;
-    width: 100%;
-    height: 2px;
-    background: var(--black);
-    content: "";
-    opacity: 0;
-    transition: all 0.3s;
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background: var(--black);
+  content: '';
+  opacity: 0;
+  transition: all 0.3s;
 }
 
 .navigation-list__item::before {
-    top: 0px;
-    transform: translateY(10px);
+  top: 0px;
+  transform: translateY(10px);
 }
 
 .navigation-list__item::after {
-    bottom: 0px;
-    transform: translateY(-10px);
+  bottom: 0px;
+  transform: translateY(-10px);
 }
 
 .navigation-list__item:hover::before,
 .navigation-list__item:hover::after {
-    opacity: 1;
-    transform: translateY(0px);
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.grid__item {
+  transition: transform 0.5s ease-in-out;
+}
+
+.grid__item:hover {
+  transform: scale(1.03);
 }
